@@ -1,5 +1,6 @@
 import { Minus, Plus, Trash2, ArrowLeft, CreditCard } from 'lucide-react';
 import type { CartItem } from '../App';
+import { publicAssetUrl } from '../lib/publicUrl';
 
 interface Props {
   cart: CartItem[];
@@ -37,7 +38,7 @@ const CartView = ({ cart, subtotal, shippingFee, finalTotal, updateQuantity, rem
               cart.map((item) => (
                 <div key={item.id} style={styles.cartRow}>
                   <div style={styles.imgWrapper}>
-                    <img src={item.imageUrl} alt={item.name} style={styles.img} />
+                    <img src={item.imageUrl ? publicAssetUrl(item.imageUrl) : ''} alt={item.name} style={styles.img} />
                   </div>
                   <div style={styles.info}>
                     <h3 style={styles.itemName}>{item.name}</h3>

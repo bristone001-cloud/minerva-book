@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build --base=/minerva-book/",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview --base=/minerva-book/"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.100.1",

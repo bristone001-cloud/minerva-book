@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { Product } from '../data/products';
 import type { CartItem } from '../App';
+import { publicAssetUrl } from '../lib/publicUrl';
 import { Minus, Plus, ChevronDown, ChevronUp, ShoppingCart, Check } from 'lucide-react';
 
 interface Props {
@@ -49,7 +50,7 @@ const ProductCard = ({ product, cart, updateQuantity }: Props) => {
         {/* Image Column */}
         <div style={styles.imageColumn}>
           <div style={styles.imageWrapper}>
-            <img src={product.imageUrl} alt={product.name} style={styles.image} />
+            <img src={publicAssetUrl(product.imageUrl)} alt={product.name} style={styles.image} />
           </div>
         </div>
 
